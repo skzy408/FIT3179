@@ -8,7 +8,7 @@
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/malaysia_states.topojson",
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/malaysia.json",
                     "format": {
                     "type": "topojson",
                     "feature": "ne_10m_admin_1_states_provinces"
