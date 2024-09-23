@@ -15,7 +15,7 @@
     },
     "transform": [
         {
-            "lookup": "properties.NAME",
+            "lookup": "properties.name",
             "from": {
                 "data": {
                     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
@@ -25,6 +25,10 @@
                     "Ratio"
                 ]
             }
+        },
+        {
+            "calculate": "datum.Ratio + 0.1",
+            "as": "Ratios"
         }
     ],
     "mark": {
@@ -32,7 +36,7 @@
     },
     "encoding": {
         "color": {
-            "field": "Ratio",
+            "field": "Ratios",
             "type": "quantitative",
             "scale": {
                 "type": "log"
@@ -40,14 +44,18 @@
         },
         "tooltip": [
             {
-                "field": "properties.NAME",
+                "field": "properties.name",
                 "type": "nominal",
-                "title": "States"
+                "title": "State"
             },
             {
                 "field": "Ratio",
+                "type": "quantitative"
+            },
+            {
+                "field": "Ratios", 
                 "type": "quantitative",
-                "title": "Total Crimes per 100,000 People"
+                "title": "Adjusted Ratio"
             }
         ]
     }
