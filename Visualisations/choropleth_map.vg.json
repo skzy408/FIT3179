@@ -22,7 +22,7 @@
                 },
                 "key": "States",
                 "fields": [
-                    "TOTAL PER 100,000 PEOPLE"
+                    "Ratio"
                 ]
             }
         }
@@ -32,7 +32,7 @@
     },
     "encoding": {
         "color": {
-            "field": "TOTAL PER 100,000 PEOPLE",
+            "field": "Ratio",
             "type": "quantitative",
             "scale": {
                 "type": "log"
@@ -42,10 +42,10 @@
             {
                 "field": "properties.NAME",
                 "type": "nominal",
-                "title": "State"
+                "title": "States"
             },
             {
-                "field": "TOTAL PER 100,000 PEOPLE",
+                "field": "Ratio",
                 "type": "quantitative",
                 "title": "Total Crimes per 100,000 People"
             }
