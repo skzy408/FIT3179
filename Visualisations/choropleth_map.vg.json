@@ -15,7 +15,7 @@
     },
     "transform": [
         {
-            "lookup": "properties.name",
+            "lookup": "properties.Name",
             "from": {
                 "data": {
                     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
@@ -51,11 +51,6 @@
             {
                 "field": "Ratio",
                 "type": "quantitative"
-            },
-            {
-                "field": "Ratios", 
-                "type": "quantitative",
-                "title": "Adjusted Ratio"
             }
         ]
     }
