@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Crime in Malaysia",
+    "title": "Crime Statistics in Malaysia (2017)",
     "width": 800,
     "height": 400,
     "projection": {
@@ -15,20 +15,18 @@
     },
     "transform": [
         {
-            "lookup": "properties.Name",
+            "lookup": "properties.name",
             "from": {
                 "data": {
                     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
                 },
-                "key": "States",
-                "fields": [
-                    "Ratio"
-                ]
+                "key": "State",
+                "fields": ["Ratio"]
             }
         },
         {
-            "calculate": "datum.Ratio + 0.1",
-            "as": "Ratios"
+            "calculate": "toNumber(datum.Ratio) + 0.1",
+            "as": "Total Crimes per 100,000 people"
         }
     ],
     "mark": {
@@ -36,10 +34,13 @@
     },
     "encoding": {
         "color": {
-            "field": "Ratios",
+            "field": "Total Crimes per 100,000 people",
             "type": "quantitative",
             "scale": {
-                "type": "log"
+                "domain": [0, 100, 200, 300, 400, 500, 600, 700],     
+                "range": ["#69B34C", "#89b334","#ACB334", "#edd309", "#FAB733", "#FF8E15", "#FF4E11", "#FF0D0D", "#c72020", "#a80808"],
+                "type": "threshold",
+                "interpolate": "hcl"
             }
         },
         "tooltip": [
@@ -50,7 +51,8 @@
             },
             {
                 "field": "Ratio",
-                "type": "quantitative"
+                "type": "quantitative",
+                "title": "Total per 100,000 people"
             }
         ]
     }
