@@ -1,4 +1,4 @@
-var vg_1 = "choropleth_map.vg.json";
+var vg_1 = "Visualisations/choropleth_map.vg.json";
 
 vegaEmbed("#choro_map", vg_1).then(function (result) {
     
