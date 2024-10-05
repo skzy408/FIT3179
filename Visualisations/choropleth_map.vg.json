@@ -37,10 +37,7 @@
             "field": "Total Crimes per 100,000 people",
             "type": "quantitative",
             "scale": {
-                "domain": [0, 100, 200, 300, 400, 500, 600, 700],     
-                "range": ["#69B34C", "#89b334","#ACB334", "#edd309", "#FAB733", "#FF8E15", "#FF4E11", "#FF0D0D", "#c72020", "#a80808"],
-                "type": "threshold",
-                "interpolate": "hcl"
+                "scheme": "reds"
             }
         },
         "tooltip": [
