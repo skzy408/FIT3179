@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Violent and Property Crimes Reported (2000-2019)"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_reported_2000-2019.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.Year == 2019"
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Type of crime",
+            "type": "nominal"
+        }
+    }
+}
