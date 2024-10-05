@@ -1,0 +1,127 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Crime Statistics in Malaysia (2017)",
+    "width": 800,
+    "height": 400,
+    "projection": {
+        "type": "mercator"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_ocean.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_10m_ocean"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#ccefff"
+            }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_graticules_5.topojson", 
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_10m_graticules_5"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "stroke": "#ccc", 
+                "strokeWidth": 0.5
+            }
+        },
+        {
+            "mark": {
+                "type": "geoshape",
+                "fill": "#D9D9D9",
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_0_countries.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_10m_admin_0_countries"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_1_states_provinces.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_10m_admin_1_states_provinces"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
+                        },
+                        "key": "State",
+                        "fields": [
+                            "Ratio"
+                        ]
+                    }
+                },
+                {
+                    "calculate": "toNumber(datum.Ratio)",
+                    "as": "Total Crimes per 100,000 people"
+                }
+            ],
+            "mark": {
+                "type": "geoshape"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Total Crimes per 100,000 people",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            100,
+                            200,
+                            300,
+                            400,
+                            500,
+                            600,
+                            700
+                        ],
+                        "range": [
+                            "#69B34C",
+                            "#89b334",
+                            "#ACB334",
+                            "#edd309",
+                            "#FAB733",
+                            "#FF8E15",
+                            "#FF4E11",
+                            "#FF0D0D",
+                            "#c72020",
+                            "#a80808"
+                        ],
+                        "type": "threshold",
+                        "interpolate": "hcl"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.name",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Total Crimes per 100,000 people",
+                        "type": "quantitative",
+                        "title": "Total per 100,000 people"
+                    }
+                ]
+            }
+        }
+    ]
+}
