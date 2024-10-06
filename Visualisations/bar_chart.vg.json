@@ -3,16 +3,17 @@
     "title": {
         "text": "Violent and Property Crimes Reported (2000-2019)"
     },
+    "width": 800,
     "data": {
         "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_reported_2000-2019.csv"
     },
     "params": [
         {
             "name": "year_selection",
+            "value": "2017",
             "bind": {
                 "input": "select",
                 "options": [
-                    null,
                     "2000",
                     "2001",
                     "2002",
@@ -63,18 +64,112 @@
     "transform": [
         {
             "filter": "year_selection == null || datum.Year == year_selection"
-            
         }
     ],
-    "mark": "bar",
-    "encoding": {
-        "x": {
-            "field": "Value",
-            "type": "quantitative"
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Value",
+                    "type": "quantitative",
+                    "title": "Number of Reported Crimes"
+                },
+                "y": {
+                    "field": "Type of crime",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "Type of crime",
+                        "type": "nominal",
+                        "title": "Crime"
+                    },
+                    {
+                        "field": "Value",
+                        "type": "quantitative",
+                        "title": "Number Reported"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "nominal",
+                        "title": "Year"
+                    }
+                ]
+            }
         },
-        "y": {
-            "field": "Type of crime",
-            "type": "nominal"
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dy": -12,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum['Type of crime'] == 'Vehicles theft (Motorcycles/Scooters)'",
+                        "value": "Motorcycle/Scooter theft consistently has the highest number of reported incidents over the years."
+                    }
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Type of crime'] == 'Vehicles theft (Motorcycles/Scooters)'",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "x": {
+                    "field": "Value",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Type of crime",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "bottom",
+                "dx": 6,
+                "dy": -12,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text": {
+                    "condition": {
+                        "test": "datum['Type of crime'] == 'House break-ins and theft'",
+                        "value": "House break-ins peaked in 2009, and steadily decreased over time."
+                    }
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Type of crime'] == 'House break-ins and theft'",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "x": {
+                    "field": "Value",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Type of crime",
+                    "type": "nominal"
+                }
+            }
         }
-    }
+    ]
 }
