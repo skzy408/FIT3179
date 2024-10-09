@@ -1,0 +1,21 @@
+﻿Type of Crime,Gender,10 - 12 years,13 - 15 years,16 - 17 years,18 - 21 years,All Ages
+Property,Male,4,92,197,11,304
+Property,Female,0,6,8,0,14
+Drugs,Male,3,73,564,54,694
+Drugs,Female,1,18,69,9,97
+Assault,Male,7,75,213,17,312
+Assault,Female,0,5,14,2,19
+Traffic,Male,14,75,450,35,574
+Traffic,Female,0,5,2,0,7
+Firearm,Male,0,0,10,0,10
+Firearm,Female,0,2,0,0,2
+Minor Offences,Male,3,4,18,2,27
+Minor Offences,Female,0,2,6,0,8
+Gambling,Male,0,8,61,4,73
+Gambling,Female,0,2,12,2,16
+Trespassing,Male,0,0,1,2,3
+Trespassing,Female,0,0,0,0,0
+Others,Male,3,49,272,18,342
+Others,Female,1,5,31,2,39
+TOTAL,Male,34,376,1786,143,2339
+TOTAL,Female,2,43,142,15,202
