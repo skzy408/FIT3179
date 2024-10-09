@@ -1,21 +1,81 @@
-﻿Type of Crime,Gender,10 - 12 years,13 - 15 years,16 - 17 years,18 - 21 years,All Ages
-Property,Male,4,92,197,11,304
-Property,Female,0,6,8,0,14
-Drugs,Male,3,73,564,54,694
-Drugs,Female,1,18,69,9,97
-Assault,Male,7,75,213,17,312
-Assault,Female,0,5,14,2,19
-Traffic,Male,14,75,450,35,574
-Traffic,Female,0,5,2,0,7
-Firearm,Male,0,0,10,0,10
-Firearm,Female,0,2,0,0,2
-Minor Offences,Male,3,4,18,2,27
-Minor Offences,Female,0,2,6,0,8
-Gambling,Male,0,8,61,4,73
-Gambling,Female,0,2,12,2,16
-Trespassing,Male,0,0,1,2,3
-Trespassing,Female,0,0,0,0,0
-Others,Male,3,49,272,18,342
-Others,Female,1,5,31,2,39
-TOTAL,Male,34,376,1786,143,2339
-TOTAL,Female,2,43,142,15,202
+﻿Type of Crime,Gender,Age,Cases
+Property,Male,10 - 12 years,4
+Property,Male,13 - 15 years,92
+Property,Male,16 - 17 years,197
+Property,Male,18 - 21 years,11
+Property,Male,All Ages,304
+Property,Female,10 - 12 years,0
+Property,Female,13 - 15 years,6
+Property,Female,16 - 17 years,8
+Property,Female,18 - 21 years,0
+Property,Female,All Ages,14
+Drugs,Male,10 - 12 years,3
+Drugs,Male,13 - 15 years,73
+Drugs,Male,16 - 17 years,564
+Drugs,Male,18 - 21 years,54
+Drugs,Male,All Ages,694
+Drugs,Female,10 - 12 years,1
+Drugs,Female,13 - 15 years,18
+Drugs,Female,16 - 17 years,69
+Drugs,Female,18 - 21 years,9
+Drugs,Female,All Ages,97
+Assault,Male,10 - 12 years,7
+Assault,Male,13 - 15 years,75
+Assault,Male,16 - 17 years,213
+Assault,Male,18 - 21 years,17
+Assault,Male,All Ages,312
+Assault,Female,10 - 12 years,0
+Assault,Female,13 - 15 years,5
+Assault,Female,16 - 17 years,14
+Assault,Female,18 - 21 years,2
+Assault,Female,All Ages,19
+Traffic,Male,10 - 12 years,14
+Traffic,Male,13 - 15 years,75
+Traffic,Male,16 - 17 years,450
+Traffic,Male,18 - 21 years,35
+Traffic,Male,All Ages,574
+Traffic,Female,10 - 12 years,0
+Traffic,Female,13 - 15 years,5
+Traffic,Female,16 - 17 years,2
+Traffic,Female,18 - 21 years,0
+Traffic,Female,All Ages,7
+Firearm,Male,10 - 12 years,0
+Minor Offenses,Male,13 - 15 years,0
+Minor Offenses,Male,16 - 17 years,10
+Minor Offenses,Male,18 - 21 years,0
+Minor Offenses,Male,All Ages,10
+Minor Offenses,Female,10 - 12 years,0
+Minor Offenses,Female,13 - 15 years,2
+Minor Offenses,Female,16 - 17 years,0
+Minor Offenses,Female,18 - 21 years,0
+Minor Offenses,Female,All Ages,2
+Gambling,Male,10 - 12 years,3
+Gambling,Male,13 - 15 years,4
+Gambling,Male,16 - 17 years,18
+Gambling,Male,18 - 21 years,2
+Gambling,Male,All Ages,27
+Gambling,Female,10 - 12 years,0
+Gambling,Female,13 - 15 years,2
+Gambling,Female,16 - 17 years,6
+Gambling,Female,18 - 21 years,0
+Gambling,Female,All Ages,8
+Trespassing,Male,10 - 12 years,0
+Trespassing,Male,13 - 15 years,0
+Trespassing,Male,16 - 17 years,1
+Trespassing,Male,18 - 21 years,2
+Trespassing,Male,All Ages,3
+Trespassing,Female,10 - 12 years,0
+Trespassing,Female,13 - 15 years,0
+Trespassing,Female,16 - 17 years,0
+Trespassing,Female,18 - 21 years,0
+Trespassing,Female,All Ages,0
+Others,Male,10 - 12 years,3
+Others,Male,13 - 15 years,49
+Others,Male,16 - 17 years,272
+Others,Male,18 - 21 years,18
+Others,Male,All Ages,342
+Others,Female,10 - 12 years,1
+Others,Female,13 - 15 years,5
+Others,Female,16 - 17 years,31
+Others,Female,18 - 21 years,2
+Others,Female,All Ages,39
