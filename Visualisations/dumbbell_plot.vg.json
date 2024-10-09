@@ -8,6 +8,23 @@
   "data": {
     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_committed_by_minors.csv"
   },
+  "params": [
+    {
+      "name": "age_selection",
+      "value": "All Ages",
+      "bind": {
+        "input": "select",
+        "options": [
+          "10 - 12 years",
+          "13 - 15 years",
+          "16 - 17 years",
+          "18 - 21 years",
+          "All Ages"
+        ],
+        "name": "Age Selection: "
+      }
+    }
+  ],
   "transform": [
     {
       "filter": {
@@ -15,9 +32,9 @@
         "oneOf": [
           "Property",
           "Drugs",
-          "Gambling",
+          "Assault",
           "Traffic",
-          "Others"
+          "Gambling"
         ]
       }
     },
@@ -29,18 +46,21 @@
           "Female"
         ]
       }
+    },
+    {
+      "filter": "age_selection == null || datum.Age == age_selection"
     }
   ],
   "encoding": {
     "x": {
-      "field": "life_expect",
+      "field": "Cases",
       "type": "quantitative",
-      "title": "Life Expectancy (years)"
+      "title": "Cases"
     },
     "y": {
-      "field": "country",
+      "field": "Type of Crime",
       "type": "nominal",
-      "title": "Country",
+      "title": "Type of Crime",
       "axis": {
         "offset": 5,
         "ticks": false,
@@ -54,7 +74,7 @@
       "mark": "line",
       "encoding": {
         "detail": {
-          "field": "country",
+          "field": "Type of Crime",
           "type": "nominal"
         },
         "color": {
@@ -69,26 +89,32 @@
       },
       "encoding": {
         "color": {
-          "field": "year",
+          "field": "Gender",
           "type": "ordinal",
           "scale": {
             "domain": [
-              1955,
-              2000
+              "Male",
+              "Female"
             ],
             "range": [
               "#e6959c",
               "#911a24"
             ]
           },
-          "title": "Year"
+          "title": "Gender"
         },
         "size": {
           "value": 100
         },
         "opacity": {
           "value": 1
-        }
+        },
+        "tooltip": [
+          {"field": "Type of Crime", "type": "nominal"},
+          {"field": "Cases", "type": "quantitative"},
+          {"field": "Gender", "type": "nominal"},
+          {"field": "Age", "type": "nominal"}
+        ]
       }
     }
   ]
