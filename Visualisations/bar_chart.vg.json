@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "Violent and Property Crimes Reported (2000-2019)"
+        "text": "Reported Violent/Property Crime"
     },
     "width": 800,
     "data": {

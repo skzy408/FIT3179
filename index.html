@@ -8,26 +8,147 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <title>Data Visualisation 2</title>
     <style>
-        #bar_chart {
-            margin-top: 40px; 
+        body {
+            font-family: 'PT Sans', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        h1 {
+            font-family: 'Tinos', serif;
+            text-align: center;
+            color: #4c7298;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        h2 {
+            color: #4c7298;
+            font-weight: 900;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .chart {
+            flex: 1 1 45%; /* Adjusted width for better spacing */
+            margin: 10px;
+            border: 2px solid #4c7298; /* Darker border */
+            padding: 20px;
+            padding-left: 100px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s; /* Smooth transition for hover */
+            display: flex;
+        }
+
+        .chart:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        .text {
+            flex: 1 1 45%; /* Adjusted width for better spacing */
+            margin: 10px;
+            padding: 20px;
+            background-color: #e9ecef; /* Light gray background */
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background-color: #ffc107; /* Highlight color for emphasis */
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .chart,
+            .text {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>FIT3179 Homework Week 10</h1>
-    <div id="choro_map"></div>
-    <div id="bar_chart"></div>
-    <div id="dumbbell_plot"></div>
-    <div id="butterfly_chart"></div>
+    <h1>Behind the Statistics:<br>A Deep Dive into Malaysian Crime</h1>
 
+    <div class="container">
+        <div class="text">
+            <h2>A Closer Look at Crime Trends</h2>
+            <p>The choropleth map reveals the distribution of crime across various states in Malaysia. Notably, some
+                states, namely Selangor and Kuala Lumpur, exhibit a higher concentration of crime, hinting at underlying social dynamics and challenges.
+                This hints at where resources might be needed most urgently.</p>
+        </div>
+        <div class="chart" id="choro_map"></div>
+    </div>
+
+    <div class="container">
+        <div class="text">
+            <h2>Shifts in Violent and Property Crime</h2>
+            <p>
+                There is a concerning upward trend in both violent and property crimes as years go by.
+                <span class="highlight">Motorcycle and scooter theft</span>, in particular, dominate in property crime.
+                This may be due to the rising popularity of two-wheelers for commuting, often making them prime targets for thieves.
+                This data underscores the need for targeted interventions in crime prevention and 
+                community safety initiatives, emphasizing the importance of addressing the underlying 
+                social factors contributing to these rising crime rates.
+
+            </p>
+        </div>
+        <div class="chart" id="bar_chart"></div>
+    </div>
+
+    
+    <div class="container">
+        <div class="text" style="flex: 1 1 45%; margin: 10px;">
+            <h2>Gender Disparities in Crime</h2>
+            <p><span class="highlight">Men</span> are overwhelmingly represented in prison populations, 
+                particularly in states with higher crime rates. The relatively low number of 
+                <span class="highlight">women</span> prisoners 
+                suggests a need for targeted policies addressing women's unique circumstances within the 
+                criminal justice system.
+                This contrast highlights societal norms and potential biases 
+                in the criminal justice system, prompting a need for tailored intervention strategies 
+                that address the unique factors influencing criminal behavior among different genders.</p>
+            </div>
+            <div class="chart" id="butterfly_chart" style="flex: 1 1 45%; margin: 10px;"></div>
+        </div>
+        
+    <div class="container">
+        <div class="text">
+            <h2>Youth Under the Microscope</h2>
+            <p>Even at young ages, <span class="highlight">boys</span> have significantly higher rates across various crime categories, 
+                suggesting a trend where boys are more likely to engage in criminal behavior than <span class="highlight">girls</span>. 
+                This disparity may reflect societal expectations and pressures that influence 
+                youth behavior. The data emphasizes the need for targeted intervention programs 
+                that address the unique challenges faced by both male and female minors in preventing 
+                delinquency.</p>
+        </div>
+        <div class="chart" id="dumbbell_plot"></div>
+    </div>
+    
     <script>
-        vegaEmbed('#choro_map', './Visualisations/choropleth_map.vg.json')
-        vegaEmbed('#bar_chart', './Visualisations/bar_chart.vg.json') 
-        vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json')
-        vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json')
+        vegaEmbed('#choro_map', './Visualisations/choro_2.vg.json');
+        vegaEmbed('#bar_chart', './Visualisations/bar_chart.vg.json');
+        vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json');
+        vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json');
     </script>
 </body>
 
