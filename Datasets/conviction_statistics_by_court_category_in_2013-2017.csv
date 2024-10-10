@@ -1,5 +1,21 @@
-﻿Court Category,2013,2014,2015,2016,2017
-Minor Crimes,41202,52872,58954,63788,66684
-Misdemeanour,1016,874,923,1002,1124
-Syariah Court,53,35,41,124,43
-TOTAL,42271,53781,59918,64914,67851
+﻿Court Category,Year,Number
+Minor Crimes,2013,41202
+Minor Crimes,2014,52872
+Minor Crimes,2015,58954
+Minor Crimes,2016,63788
+Minor Crimes,2017,66684
+Misdemeanour,2013,1016
+Misdemeanour,2014,874
+Misdemeanour,2015,923
+Misdemeanour,2016,1002
+Misdemeanour,2017,1124
+Syariah Court,2013,53
+Syariah Court,2014,35
+Syariah Court,2015,41
+Syariah Court,2016,124
+Syariah Court,2017,43
+TOTAL,2013,42271
+TOTAL,2014,53781
+TOTAL,2015,59918
+TOTAL,2016,64914
+TOTAL,2017,67851

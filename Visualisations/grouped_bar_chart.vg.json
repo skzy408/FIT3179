@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/conviction_statistics_by_court_category_in_2013-2017.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Court Category"},
+      "y": {"field": "2016", "type": "quantitative"},
+      "xOffset": {"field": "group"},
+      "color": {"field": "group"}
+    }
+  }
