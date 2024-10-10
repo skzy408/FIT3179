@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    <title>FIT3179 Homework Week 10 </title>
+    <title>Data Visualisation 2</title>
     <style>
         #bar_chart {
             margin-top: 40px; 
@@ -20,10 +20,14 @@
     <h1>FIT3179 Homework Week 10</h1>
     <div id="choro_map"></div>
     <div id="bar_chart"></div>
+    <div id="dumbbell_plot"></div>
+    <div id="butterfly_chart"></div>
 
     <script>
         vegaEmbed('#choro_map', './Visualisations/choropleth_map.vg.json')
         vegaEmbed('#bar_chart', './Visualisations/bar_chart.vg.json') 
+        vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json')
+        vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json')
     </script>
 </body>
 
