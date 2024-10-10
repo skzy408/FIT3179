@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 300,
+    "data": {
+        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/conviction_statistics_by_court_category_in_2013-2017.csv"
+    },
+    "mark": "area",
+    "transform": [
+        {
+            "filter": {
+                "field": "Court Category",
+                "oneOf": [
+                    "Minor Crimes",
+                    "Misdemeanour",
+                    "Syariah Court"
+                ]
+            }
+        }
+    ],
+    "encoding": {
+        "x": {
+            "timeUnit": "year",
+            "field": "Year",
+            "axis": {
+                "format": "%Y",
+                "values": [2013, 2014, 2015, 2016, 2017]
+            }
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Number",
+            "scale": {
+                "type": "log"
+            },
+            "axis": {
+                "grid": false,
+                "values": [0, 100, 1000, 10000, 100000]
+            }
+        },
+        "color": {
+            "field": "Court Category",
+            "scale": {
+                "scheme": "category20c"
+            }
+        },
+        "tooltip": [
+            { "field": "Year", "title": "Year", "timeUnit": "year" },
+            { "field": "Court Category", "title": "Court Category" },
+            { "field": "Number", "title": "Number of Convictions" }
+        ]
+    }
+}
