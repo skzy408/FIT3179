@@ -79,6 +79,12 @@
                     "field": "Type of crime",
                     "type": "nominal"
                 },
+                "color": {
+                    "field": "Type of crime",
+                    "scale": {
+                        "scheme": "reds"
+                    }
+                },
                 "tooltip": [
                     {
                         "field": "Type of crime",
