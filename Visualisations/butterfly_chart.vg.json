@@ -4,13 +4,31 @@
   "data": {
     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/total-prisoners-convicted-by-gender-and-state.csv"
   },
+  "params": [
+    {
+      "name": "year_selection",
+      "value": "2017",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2014",
+          "2015",
+          "2016",
+          "2017"
+        ],
+        "labels": [
+          "2014",
+          "2015",
+          "2016",
+          "2017"
+        ],
+        "name": "Year Selection: "
+      }
+    }
+  ],
   "transform": [
     {
-      "filter": "datum.Year == 2014"
-    },
-    {
-      "calculate": "datum.sex == 2 ? 'Female' : 'Male'",
-      "as": "gender"
+      "filter": "year_selection == null || datum.Year == year_selection"
     }
   ],
   "spacing": 0,
@@ -19,7 +37,7 @@
       "transform": [
         {
           "filter": {
-            "field": "gender",
+            "field": "Gender",
             "equal": "Female"
           }
         }
@@ -28,29 +46,42 @@
       "mark": "bar",
       "encoding": {
         "y": {
-          "field": "age",
-          "axis": null,
-          "sort": "descending"
+          "field": "State",
+          "axis": null
         },
         "x": {
           "aggregate": "sum",
-          "field": "people",
-          "title": "population",
+          "field": "Prisoners",
+          "title": "Number of Prisoners",
           "axis": {
             "format": "s"
           },
           "sort": "descending"
         },
         "color": {
-          "field": "gender",
+          "field": "Gender",
           "scale": {
             "range": [
-              "#675193",
-              "#ca8861"
+              "#c26379",
+              "#637cc2"
             ]
           },
           "legend": null
-        }
+        },
+        "tooltip": [
+          {
+            "field": "State",
+            "title": "State"
+          },
+          {
+            "field": "Prisoners",
+            "title": "Number of Prisoners"
+          },
+          {
+            "field": "Gender",
+            "title": "Gender"
+          }
+        ]
       }
     },
     {
@@ -64,14 +95,13 @@
       },
       "encoding": {
         "y": {
-          "field": "age",
+          "field": "State",
           "type": "ordinal",
-          "axis": null,
-          "sort": "descending"
+          "axis": null
         },
         "text": {
-          "field": "age",
-          "type": "quantitative"
+          "field": "State",
+          "type": "nominal"
         }
       }
     },
@@ -79,7 +109,7 @@
       "transform": [
         {
           "filter": {
-            "field": "gender",
+            "field": "Gender",
             "equal": "Male"
           }
         }
@@ -88,23 +118,36 @@
       "mark": "bar",
       "encoding": {
         "y": {
-          "field": "age",
+          "field": "State",
           "title": null,
-          "axis": null,
-          "sort": "descending"
+          "axis": null
         },
         "x": {
           "aggregate": "sum",
-          "field": "people",
-          "title": "population",
+          "field": "Prisoners",
+          "title": "Number of Prisoners",
           "axis": {
             "format": "s"
           }
         },
         "color": {
-          "field": "gender",
+          "field": "Gender",
           "legend": null
-        }
+        },
+        "tooltip": [
+          {
+            "field": "State",
+            "title": "State"
+          },
+          {
+            "field": "Prisoners",
+            "title": "Number of Prisoners"
+          },
+          {
+            "field": "Gender",
+            "title": "Gender"
+          }
+        ]
       }
     }
   ],
