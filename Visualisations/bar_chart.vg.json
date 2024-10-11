@@ -3,7 +3,7 @@
     "title": {
         "text": "Reported Violent/Property Crime"
     },
-    "width": 800,
+    "width": 750,
     "data": {
         "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_reported_2000-2019.csv"
     },
