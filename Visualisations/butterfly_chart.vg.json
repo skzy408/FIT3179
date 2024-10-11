@@ -55,7 +55,8 @@
           "axis": {
             "format": "s"
           },
-          "sort": "descending"
+          "sort": "descending",
+          "scale": {"domain": {"unionWith": [0, 11000]}}
         },
         "color": {
           "field": "Gender",
@@ -127,7 +128,8 @@
           "title": "Number of Prisoners",
           "axis": {
             "format": "s"
-          }
+          },
+          "scale": {"domain": {"unionWith": [0, 11000]}}
         },
         "color": {
           "field": "Gender",

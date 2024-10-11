@@ -12,12 +12,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <title>Data Visualisation 2</title>
     <style>
         body {
-            font-family: 'PT Sans', sans-serif;
+            font-family: 'Karla', sans-serif;
             line-height: 1.6;
             margin: 20px;
             background-color: #f8f9fa;
@@ -25,7 +25,7 @@
         }
 
         h1 {
-            font-family: 'Tinos', serif;
+            font-family: 'PT Sans', serif;
             text-align: center;
             color: #4c7298;
             font-weight: bold;
@@ -33,6 +33,7 @@
         }
 
         h2 {
+            font-family: 'Karla', sans-serif;
             color: #4c7298;
             font-weight: 900;
         }
@@ -112,7 +113,7 @@
 
             </p>
         </div>
-        <div class="chart" id="bar_chart"></div>
+        <div class="chart" id="area_chart"></div>
     </div>
 
     
@@ -144,11 +145,21 @@
         <div class="chart" id="dumbbell_plot"></div>
     </div>
 
+    <div class="container">
+        <div class="text">
+            <h2>asdfjhadfjh</h2>
+            <p>alsdfasf</p>
+        </div>
+        <div class="chart" id="bar_2"></div>
+    </div>
+
     <script>
         vegaEmbed('#choro_map', './Visualisations/choro_2.vg.json');
+        vegaEmbed('#area_chart', './Visualisations/area_chart.vg.json');
         vegaEmbed('#bar_chart', './Visualisations/bar_chart.vg.json');
         vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json');
         vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json');
+        vegaEmbed('#bar_2', './Visualisations/bar_2.vg.json');
     </script>
 </body>
 

@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_reported_2000-2019.csv"
+    },
+    "vconcat": [
+        {
+            "width": 600,
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "timeUnit": "year",
+                    "field": "Year",
+                    "scale": {
+                        "domain": {
+                            "param": "brush"
+                        }
+                    },
+                    "axis": {
+                        "format": "%Y",
+                        "title": ""
+                    }
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Value"
+                },
+                "color": {
+                    "field": "Type of crime",
+                    "scale": {
+                        "scheme": "category20b"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Type of crime",
+                        "type": "nominal",
+                        "title": "Crime"
+                    },
+                    {
+                        "field": "Value",
+                        "type": "quantitative",
+                        "title": "Cases Reported"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "temporal",
+                        "timeUnit": "year"
+                    }
+                ]
+            }
+        },
+        {
+            "width": 600,
+            "height": 60,
+            "mark": "area",
+            "params": [
+                {
+                    "name": "brush",
+                    "select": {
+                        "type": "interval",
+                        "encodings": [
+                            "x"
+                        ]
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "timeUnit": "year",
+                    "field": "Year",
+                    "axis": {
+                        "format": "%Y"
+                    }
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Value"
+                },
+                "color": {
+                    "field": "Type of crime",
+                    "scale": {
+                        "scheme": "category20b"
+                    }
+                }
+            }
+        }
+    ]
+}

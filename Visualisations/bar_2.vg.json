@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Crime Index in Southeast Asia",
+    "data": {
+        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_index_by_country.csv"
+    },
+    "height": {
+        "step": 35
+    },
+    "width": 450,
+    "mark": {
+        "type": "bar",
+        "yOffset": 5,
+        "cornerRadiusEnd": 6.5,
+        "height": {
+            "band": 0.3
+        }
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Country",
+                "oneOf": [
+                    "Indonesia",
+                    "Thailand",
+                    "Vietnam",
+                    "Singapore",
+                    "Brunei",
+                    "Myanmar",
+                    "Philippines",
+                    "Cambodia",
+                    "Malaysia"
+                ]
+            }
+        }
+    ],
+    "encoding": {
+        "y": {
+            "field": "Country",
+            "scale": {
+                "padding": 0
+            },
+            "axis": {
+                "bandPosition": 0,
+                "grid": true,
+                "domain": false,
+                "ticks": false,
+                "labelAlign": "left",
+                "labelBaseline": "middle",
+                "labelPadding": -5,
+                "labelOffset": -6,
+                "titleX": 5,
+                "titleY": -5,
+                "titleAngle": 0,
+                "titleAlign": "left"
+            }
+        },
+        "x": {
+            "field": "Crime Index",
+            "type": "quantitative",
+            "axis": {
+                "grid": false
+            }
+        },
+        "color": {
+            "condition": {
+                "test": "datum.Country === 'Malaysia'",
+                "value": "red"
+            },
+            "value": "steelblue"
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal"
+            },
+            {
+                "field": "Crime Index",
+                "type": "quantitative"
+            },
+            {
+                "field": "Safety Index",
+                "type": "quantitative"
+            }
+        ]
+    }
+}
