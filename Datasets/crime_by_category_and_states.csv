@@ -1,29 +1,3 @@
-﻿Crime,State,Number
-Violent,Johor,2578
-Violent,Kedah,996
-Violent,Kelantan,600
-Violent,Kuala Lumpur,3999
-Violent,Melaka,842
-Violent,Negeri Sembilan,884
-Violent,Pahang,656
-Violent,Perak,1140
-Violent,Perlis,132
-Violent,Pulau Pinang,1078
-Violent,Sabah,761
-Violent,Sarawak,876
-Violent,Selangor ,6470
-Violent,Terengganu,354
-Property,Johor,8729
-Property,Kedah,5763
-Property,Kelantan,3920
-Property,Kuala Lumpur,9483
-Property,Melaka,2255
-Property,Negeri Sembilan,3089
-Property,Pahang,2951
-Property,Perak,4186
-Property,Perlis,471
-Property,Pulau Pinang,4473
-Property,Sabah,5475
-Property,Sarawak,5505
-Property,Selangor ,19599
-Property,Terengganu,1903
+﻿Crime,Total
+Violent,21366
+Property,77802
