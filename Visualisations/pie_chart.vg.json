@@ -1,25 +1,18 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "values": [
-        {"category": "a", "value": 4},
-        {"category": "b", "value": 6},
-        {"category": "c", "value": 10},
-        {"category": "d", "value": 3},
-        {"category": "e", "value": 7},
-        {"category": "f", "value": 8}
-      ]
+        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv"
     },
     "encoding": {
-      "theta": {"field": "value", "type": "quantitative", "stack": true},
-      "color": {"field": "category", "type": "nominal", "legend": null}
+      "theta": {"field": "Number", "type": "quantitative", "stack": true},
+      "color": {"field": "Crime", "type": "nominal", "legend": null}
     },
     "layer": [{
       "mark": {"type": "arc", "outerRadius": 80}
     }, {
       "mark": {"type": "text", "radius": 90},
       "encoding": {
-        "text": {"field": "category", "type": "nominal"}
+        "text": {"field": "Crime", "type": "nominal"}
       }
     }]
   }
