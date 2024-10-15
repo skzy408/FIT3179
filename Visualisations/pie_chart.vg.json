@@ -9,7 +9,7 @@
       "field": "Crime",
       "type": "nominal",
       "scale": {
-        "range": ["#8ca252", "#d6616b"]
+        "range": ["#8ca252", "#e7ba52"]
       },
       "legend": null
     },

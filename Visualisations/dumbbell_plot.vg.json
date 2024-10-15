@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Juvenile Crimes"
-  },
+  "title": "Juvenile Crime",
   "width": 800,
   "data": {
     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_committed_by_minors.csv"
@@ -70,14 +68,17 @@
   },
   "layer": [
     {
-      "mark": "line",
+      "mark": {
+        "type": "line",
+        "strokeWidth": 0.9
+      },
       "encoding": {
         "detail": {
           "field": "Type of Crime",
           "type": "nominal"
         },
         "color": {
-          "value": "#db646f"
+          "value": "#716a80"
         }
       }
     },

@@ -65,9 +65,9 @@
         "color": {
             "condition": {
                 "test": "datum.Country === 'Malaysia'",
-                "value": "red"
+                "value": "#cf3e52"
             },
-            "value": "steelblue"
+            "value": "#e7ba52"
         },
         "tooltip": [
             {
