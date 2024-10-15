@@ -1,9 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv"
+    "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv",
+    "format": {"type": "csv"}
   },
-  "width":"container",
+  "transform": [
+    {
+      "calculate": "datum.Crime === 'Violent' ? 'Violent Crime' : datum.Crime === 'Property' ? 'Property Crime' : datum.Crime",
+      "as": "CrimeLabel"
+    }
+  ],
+  "width": "container",
   "height": "container",
   "config": {
     "style": {
@@ -15,7 +22,7 @@
   "encoding": {
     "theta": {"field": "Total", "type": "quantitative", "stack": true},
     "color": {
-      "field": "Crime",
+      "field": "CrimeLabel",  
       "type": "nominal",
       "scale": {
         "range": ["#8ca252", "#e7ba52"]
@@ -23,8 +30,8 @@
       "legend": null
     },
     "tooltip": [
-      {"field": "Crime", "type": "nominal", "title": "Crime Type"},
-      {"field": "Total", "type": "quantitative", "title": "Total Crimes"}
+      {"field": "CrimeLabel", "type": "nominal", "title": "Type of Crime"},
+      {"field": "Total", "type": "quantitative", "title": "Number of Crimes"}
     ]
   },
   "layer": [
@@ -32,9 +39,9 @@
       "mark": {"type": "arc", "outerRadius": 120}
     },
     {
-      "mark": {"type": "text", "radius": 150, "fontWeight":"bold"},
+      "mark": {"type": "text", "radius": 150, "fontWeight": "bold"},
       "encoding": {
-        "text": {"field": "Crime", "type": "nominal"}
+        "text": {"field": "CrimeLabel"}
       }
     }
   ]

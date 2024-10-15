@@ -22,7 +22,6 @@
             padding: 30px;
         }
 
-        /* Main content area */
         .main-content {
             width: 100%;
             max-width: 1100px;
@@ -43,7 +42,6 @@
             margin-top: 40px;
         }
 
-
         .section {
             margin-top: 40px;
             padding: 20px;
@@ -52,18 +50,14 @@
             align-items: center;
         }
 
-        /* New class for charts container */
         .charts-container {
             display: flex;
             flex-wrap: nowrap;
-            /* Prevent wrapping */
             justify-content: space-between;
-            /* Space between charts */
         }
 
         .chart {
             flex: 1;
-            /* Allows both charts to take equal space */
             margin: 10px;
             min-height: 300px;
         }
@@ -76,10 +70,14 @@
             color: #343a40;
         }
 
-        .chart {
-            flex: 1 1 100%;
-            margin: 10px;
-            min-height: 300px;
+        .highlight {
+            font-weight: bold;
+            color: #b95056;
+        }
+
+        .important {
+            color: #5f6797;
+            font-weight: bold;
         }
 
         #choro_map {
@@ -89,7 +87,7 @@
 
         #area_chart {
             height: 200px;
-            width: 300px
+            width: 300px;
         }
 
         #butterfly_chart {
@@ -102,12 +100,13 @@
 
         #pie_chart {
             height: 360px;
-            width: 400px;
+            width: 305px;
         }
 
         #bar_2 {
             height: 300px;
-            width: 400px;
+            width: 500px;
+            padding-left: 20px;
         }
 
         @media (min-width: 768px) {
@@ -128,37 +127,32 @@
 
 <body>
     <div class="main-content">
-        <h1>Behind the Statistics: <br> A Deep Dive into Malaysian Crime</h1>
+        <h1>Behind the Statistics: <br> <span class="highlight">A Deep Dive into Malaysian Crime</span></h1>
 
         <div class="section" id="overview">
             <div class="section-text">
-                <h2>Overview of Crime Distribution Across Malaysia</h2>
-                <p>In 2017, Malaysia recorded a total of 99,168 crimes, which included various
-                    categories such as property crimes, violent crimes, and drug-related offenses.
-                    Kuala Lumpur and Selangor were undoubtedly the most dangerous areas, reaching
-                    a peak of 13,482 cases reported in 2017 alone. Among these crimes, theft emerged
-                    as the most prevalent, accounting for nearly 32% of all reported offenses.</p>
+                <h2>Where Are the Crime Hotspots in Malaysia?</h2>
+                <p>In <span class="important">2017</span>, Malaysia recorded a total of <span class="highlight">99,168 crimes</span>, which included various categories such as property crimes, violent crimes, and drug-related offenses. 
+                <span class="highlight">Kuala Lumpur</span> and <span class="highlight">Selangor</span> were undoubtedly the most dangerous areas, reaching a peak of <strong>13,482 cases</strong> reported in 2017 alone. Among these crimes, <span style="color: #b95056; font-weight: bold;">theft</span> emerged as the most prevalent, accounting for nearly <span class="important">32%</span> of all reported offenses.</p>
             </div>
             <div class="chart" id="choro_map"></div>
         </div>
 
         <div class="section" id="trends">
             <div class="section-text">
-                <h2>Trends in Crime Rates</h2>
-                <p>The area chart shows a notable increase in both violent and property crimes over time, with
-                    <span class="highlight">motorcycle theft</span> emerging as a dominant issue. Understanding these
-                    trends can help inform effective prevention strategies.
-                </p>
+                <h2>Are Crime Rates Increasing or Decreasing Over Time?</h2>
+                <p>The area chart shows a notable increase in both <span class="highlight">violent</span> and <span class="highlight">property crimes</span> over time, with <span class="important">motorcycle theft</span> emerging as a dominant issue. Understanding these trends can help inform effective prevention strategies.</p>
             </div>
-            <div class="chart" id="area_chart"></div>
+            <div class="charts-container">
+                <div class="chart" id="pie_chart"></div>
+                <div class="chart" id="area_chart"></div>
+            </div>
         </div>
 
         <div class="section" id="gender">
             <div class="section-text">
-                <h2>Gender Disparities in Crime</h2>
-                <p>The data reveals significant gender disparities in crime involvement, with men being
-                    disproportionately represented. This raises questions about social norms and the structure of the
-                    criminal justice system.</p>
+                <h2>Are More Men or Women Behind Bars?</h2>
+                <p>The data reveals significant <span class="highlight">gender disparities</span> in crime involvement, with <strong>men</strong> being disproportionately represented. This raises questions about <span class="important">social norms</span> and the structure of the criminal justice system. In contrast, <strong>women’s involvement</strong> tends to be lower, often associated with specific circumstances like domestic situations or economic necessity.</p>
             </div>
             <div class="chart" id="butterfly_chart"></div>
         </div>
@@ -166,33 +160,29 @@
         <div class="section" id="youth">
             <div class="section-text">
                 <h2>Youth & Crime</h2>
-                <p>The disparities in crime rates between young males and females point to underlying societal
-                    challenges and pressures. Addressing these trends is crucial for reducing future criminal behavior.
-                </p>
+                <p>The disparities in crime rates between young <span class="highlight">males</span> and <span class="highlight">females</span> point to underlying societal challenges and pressures. When it comes to <span class="important">juvenile crime</span>, young males also dominate the statistics, facing challenges like <strong>peer pressure</strong>, <strong>lack of opportunities</strong>, and exposure to criminal environments. These disparities highlight the need for targeted interventions to address the unique social and economic factors contributing to criminal behavior among different genders and age groups.</p>
             </div>
             <div class="chart" id="dumbbell_plot"></div>
         </div>
 
-        <div class="section">
-            <div class="section-text">
-                <h2>Additional Insights</h2>
-                <p>This section covers other notable crime statistics, providing a more comprehensive understanding of
-                    the broader societal implications of crime data.</p>
+        <div class="section" id="additional-insights">
+            <div class="section-text" style="flex: 1; height: 430px; width: 500px; margin-right: 20px;">
+                <h2>How Dangerous is Southeast Asia?</h2>
+                <p><span class="highlight">Malaysia's crime index</span> stands out as the highest in Southeast Asia at an outstanding <span class="important">58.55</span>.<br><br>
+                <strong>Crime Index</strong> is an estimation of the overall level of crime in a given city or country. Levels below <span class="important">20</span> are considered very low, between <span class="important">20 and 40</span> as low, <span class="important">40 and 60</span> as moderate, <span class="important">60 and 80</span> as high, and levels above <span class="important">80</span> as very high.</p>
             </div>
-            <div class="charts-container">
-                <div class="chart" id="pie_chart"></div>
-                <div class="chart" id="bar_2"></div>
-            </div>
+            <div class="chart" id="bar_2" style="flex: 1 0 auto; min-height: 200px;"></div>
         </div>
 
-    <script>
-        vegaEmbed('#choro_map', './Visualisations/choro_2.vg.json');
-        vegaEmbed('#area_chart', './Visualisations/area_chart.vg.json');
-        vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json');
-        vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json');
-        vegaEmbed('#pie_chart', './Visualisations/pie_chart.vg.json');
-        vegaEmbed('#bar_2', './Visualisations/bar_2.vg.json');
-    </script>
+        <script>
+            vegaEmbed('#choro_map', './Visualisations/choro_2.vg.json');
+            vegaEmbed('#area_chart', './Visualisations/area_chart.vg.json');
+            vegaEmbed('#butterfly_chart', './Visualisations/butterfly_chart.vg.json');
+            vegaEmbed('#dumbbell_plot', './Visualisations/dumbbell_plot.vg.json');
+            vegaEmbed('#pie_chart', './Visualisations/pie_chart.vg.json');
+            vegaEmbed('#bar_2', './Visualisations/bar_2.vg.json');
+        </script>
+    </div>
 </body>
 
 </html>
