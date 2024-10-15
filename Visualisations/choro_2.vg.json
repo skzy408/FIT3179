@@ -78,6 +78,10 @@
           {
             "calculate": "toNumber(datum.Ratio)",
             "as": "Crimes per 100,000 population"
+          },
+          {
+            "calculate": "datum['Crimes per 100,000 population'] == null ? 'Data not available' : datum['Crimes per 100,000 population']",
+            "as": "Crimes Tooltip"
           }
         ],
         "mark": {
@@ -102,9 +106,9 @@
               "title": "State"
             },
             {
-              "field": "Crimes per 100,000 population",
-              "type": "quantitative",
-              "title": "Crimes per 100,000 population"
+                "field": "Crimes Tooltip",
+                "type": "nominal",
+                "title": "Crimes per 100,000 population"
             }
           ]
         }
