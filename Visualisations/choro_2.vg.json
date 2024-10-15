@@ -77,11 +77,7 @@
           },
           {
             "calculate": "toNumber(datum.Ratio)",
-            "as": "Total Crimes per 100,000 people"
-          },
-          {
-            "calculate": "datum['properties.name'] == 'Putrajaya' ? 'Capital City: Putrajaya' : null",
-            "as": "Putrajaya Tooltip"
+            "as": "Crimes per 100,000 population"
           }
         ],
         "mark": {
@@ -90,7 +86,7 @@
         },
         "encoding": {
           "color": {
-            "field": "Total Crimes per 100,000 people",
+            "field": "Crimes per 100,000 population",
             "type": "quantitative",
             "scale": {
               "type": "threshold",
@@ -106,14 +102,9 @@
               "title": "State"
             },
             {
-              "field": "Total Crimes per 100,000 people",
+              "field": "Crimes per 100,000 population",
               "type": "quantitative",
-              "title": "Total per 100,000 people"
-            },
-            {
-              "field": "Putrajaya Tooltip",
-              "type": "nominal",
-              "title": "Additional Info"
+              "title": "Crimes per 100,000 population"
             }
           ]
         }
