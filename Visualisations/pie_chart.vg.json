@@ -3,6 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv"
   },
+  "width":"container",
+  "height": "container",
   "encoding": {
     "theta": {"field": "Total", "type": "quantitative", "stack": true},
     "color": {
@@ -20,10 +22,10 @@
   },
   "layer": [
     {
-      "mark": {"type": "arc", "outerRadius": 80}
+      "mark": {"type": "arc", "outerRadius": 120}
     },
     {
-      "mark": {"type": "text", "radius": 100},
+      "mark": {"type": "text", "radius": 150, "fontWeight":"bold"},
       "encoding": {
         "text": {"field": "Crime", "type": "nominal"}
       }

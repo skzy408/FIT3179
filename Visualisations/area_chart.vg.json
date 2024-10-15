@@ -5,7 +5,8 @@
     },
     "vconcat": [
         {
-            "width": 600,
+            "width": 700,
+            "height": 200,
             "mark": "area",
             "encoding": {
                 "x": {
@@ -52,8 +53,8 @@
             }
         },
         {
-            "width": 600,
-            "height": 60,
+            "width": 700,
+            "height": 70,
             "mark": "area",
             "params": [
                 {
