@@ -4,101 +4,120 @@
     "width": 800,
     "height": 400,
     "projection": {
-        "type": "mercator"
+      "type": "mercator"
+    },
+    "config": {
+      "style": {
+        "cell": {
+          "stroke": "transparent"
+        }
+      }
     },
     "layer": [
-        {
-            "data": {
-                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_ocean.topojson",
-                "format": {
-                    "type": "topojson",
-                    "feature": "ne_10m_ocean"
-                }
-            },
-            "mark": {
-                "type": "geoshape",
-                "fill": "#ccefff"
-            }
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_ocean.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_ocean"
+          }
         },
-        {
-            "data": {
-                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_graticules_5.topojson", 
-                "format": {
-                    "type": "topojson",
-                    "feature": "ne_10m_graticules_5"
-                }
-            },
-            "mark": {
-                "type": "geoshape",
-                "stroke": "#ccc", 
-                "strokeWidth": 0.5
-            }
-        },
-        {
-            "mark": {
-                "type": "geoshape",
-                "fill": "#D9D9D9",
-                "stroke": "white",
-                "strokeWidth": 1
-            },
-            "data": {
-                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_0_countries.topojson",
-                "format": {
-                    "type": "topojson",
-                    "feature": "ne_10m_admin_0_countries"
-                }
-            }
-        },
-        {
-            "data": {
-                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_1_states_provinces.topojson",
-                "format": {
-                    "type": "topojson",
-                    "feature": "ne_10m_admin_1_states_provinces"
-                }
-            },
-            "transform": [
-                {
-                    "lookup": "properties.name",
-                    "from": {
-                        "data": {
-                            "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
-                        },
-                        "key": "State",
-                        "fields": [
-                            "Ratio"
-                        ]
-                    }
-                },
-                {
-                    "calculate": "toNumber(datum.Ratio)",
-                    "as": "Total Crimes per 100,000 people"
-                }
-            ],
-            "mark": {
-                "type": "geoshape"
-            },
-            "encoding": {
-                "color": {
-                    "field": "Total Crimes per 100,000 people",
-                    "type": "quantitative",
-                    "scale": {
-                        "scheme": "reds"
-                    }   
-                },
-                "tooltip": [
-                    {
-                        "field": "properties.name",
-                        "type": "nominal",
-                        "title": "State"
-                    },
-                    {
-                        "field": "Total Crimes per 100,000 people",
-                        "type": "quantitative",
-                        "title": "Total per 100,000 people"
-                    }
-                ]
-            }
+        "mark": {
+          "type": "geoshape",
+          "fill": "#ccefff",
+          "stroke": null
         }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_graticules_5.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_graticules_5"
+          }
+        },
+        "mark": {
+          "type": "geoshape",
+          "strokeWidth": 0.5
+        }
+      },
+      {
+        "mark": {
+          "type": "geoshape",
+          "fill": "#D9D9D9",
+          "stroke": "white",
+          "strokeWidth": 0.5
+        },
+        "data": {
+          "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_0_countries.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_admin_0_countries"
+          }
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Data/ne_10m_admin_1_states_provinces.topojson",
+          "format": {
+            "type": "topojson",
+            "feature": "ne_10m_admin_1_states_provinces"
+          }
+        },
+        "transform": [
+          {
+            "lookup": "properties.name",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_in_states_malaysia_2017.csv"
+              },
+              "key": "State",
+              "fields": ["Ratio"]
+            }
+          },
+          {
+            "calculate": "toNumber(datum.Ratio)",
+            "as": "Total Crimes per 100,000 people"
+          },
+          {
+            "calculate": "datum['properties.name'] == 'Putrajaya' ? 'Capital City: Putrajaya' : null",
+            "as": "Putrajaya Tooltip"
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "stroke": null
+        },
+        "encoding": {
+          "color": {
+            "field": "Total Crimes per 100,000 people",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [100, 200, 300, 500, 700],
+              "range": ["#ffd7cc", "#f3ac9a", "#e2816b", "#ce533f", "#b71616"]
+            }
+          },
+          "tooltip": [
+            
+            {
+              "field": "properties.name",
+              "type": "nominal",
+              "title": "State"
+            },
+            {
+              "field": "Total Crimes per 100,000 people",
+              "type": "quantitative",
+              "title": "Total per 100,000 people"
+            },
+            {
+              "field": "Putrajaya Tooltip",
+              "type": "nominal",
+              "title": "Additional Info"
+            }
+          ]
+        }
+      }
     ]
-}
+  }
+  

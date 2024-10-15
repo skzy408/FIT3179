@@ -1,19 +1,32 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-        "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_by_category_and_states.csv"
+  },
+  "encoding": {
+    "theta": {"field": "Total", "type": "quantitative", "stack": true},
+    "color": {
+      "field": "Crime",
+      "type": "nominal",
+      "scale": {
+        "range": ["#1f77b4", "#ff7f0e"]
+      },
+      "legend": null
     },
-    "encoding": {
-      "theta": {"field": "Number", "type": "quantitative", "stack": true},
-      "color": {"field": "Crime", "type": "nominal", "legend": null}
-    },
-    "layer": [{
+    "tooltip": [
+      {"field": "Crime", "type": "nominal", "title": "Crime Type"},
+      {"field": "Total", "type": "quantitative", "title": "Total Crimes"}
+    ]
+  },
+  "layer": [
+    {
       "mark": {"type": "arc", "outerRadius": 80}
-    }, {
-      "mark": {"type": "text", "radius": 90},
+    },
+    {
+      "mark": {"type": "text", "radius": 100},
       "encoding": {
         "text": {"field": "Crime", "type": "nominal"}
       }
-    }]
-  }
-  
+    }
+  ]
+}
