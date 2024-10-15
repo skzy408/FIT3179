@@ -109,6 +109,22 @@
             padding-left: 20px;
         }
 
+        .footer {
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #f4f4f9;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5f6797;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer a {
+            color: #b95056;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         @media (min-width: 768px) {
             .section {
                 flex-direction: row;
@@ -182,7 +198,14 @@
             vegaEmbed('#pie_chart', './Visualisations/pie_chart.vg.json');
             vegaEmbed('#bar_2', './Visualisations/bar_2.vg.json');
         </script>
+
+        <div class="footer">
+            <p>Data Sources: 
+                <a href="https://data.gov.my/" target="_blank">data.gov.my</a>, 
+                <a href="https://www.numbeo.com/crime/region_rankings.jsp?title=2023&region=035" target="_blank">Numbeo Crime Index 2023</a>
+            </p>
+            <p>Visualization by Samantha Khoo Zhi Yen</p>
+        </div>
     </div>
 </body>
-
 </html>
