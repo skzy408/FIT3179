@@ -129,19 +129,12 @@
     {
       "mark": {
         "type": "text",
-        "fontSize": 20,
-        "fontWeight": "bold",
-        "color": "black"
+        "dy": -10
       },
       "encoding": {
         "text": {
-          "value": "Selangor"
-        },
-        "x": {
-          "value": 100
-        },
-        "y": {
-          "value": 50 
+          "field": "properties.name",
+          "type": "nominal"
         }
       }
     }

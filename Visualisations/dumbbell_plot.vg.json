@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Juvenile Crime",
   "width": 800,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crimes_committed_by_minors.csv"
   },

@@ -43,7 +43,8 @@
       ],
       "title": "Female",
       "mark": "bar",
-      "width": 450,
+      "width": 430,
+      "height": 300,
       "encoding": {
         "y": {
           "field": "State",
@@ -86,7 +87,8 @@
       }
     },
     {
-      "width": 20,
+      "width": 140,
+      "height": 300,
       "view": {
         "stroke": null
       },
@@ -116,7 +118,8 @@
         }
       ],
       "title": "Male",
-      "width": 450,
+      "width": 430,
+      "height": 300,
       "mark": "bar",
       "encoding": {
         "y": {

@@ -5,9 +5,9 @@
         "url": "https://raw.githubusercontent.com/skzy408/FIT3179/refs/heads/main/Datasets/crime_index_by_country.csv"
     },
     "height": {
-        "step": 35
+        "step": 30
     },
-    "width": 450,
+    "width": 600,
     "mark": {
         "type": "bar",
         "yOffset": 5,

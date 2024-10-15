@@ -52,8 +52,25 @@
             align-items: center;
         }
 
+        /* New class for charts container */
+        .charts-container {
+            display: flex;
+            flex-wrap: nowrap;
+            /* Prevent wrapping */
+            justify-content: space-between;
+            /* Space between charts */
+        }
+
+        .chart {
+            flex: 1;
+            /* Allows both charts to take equal space */
+            margin: 10px;
+            min-height: 300px;
+        }
+
         .section-text {
             flex: 1 1 100%;
+            font-size: 1.1rem;
             max-width: 1200px;
             margin: 10px;
             color: #343a40;
@@ -84,11 +101,13 @@
         }
 
         #pie_chart {
-            height: 400px;
+            height: 360px;
+            width: 400px;
         }
 
         #bar_2 {
-            height: 450px;
+            height: 300px;
+            width: 400px;
         }
 
         @media (min-width: 768px) {
@@ -113,10 +132,12 @@
 
         <div class="section" id="overview">
             <div class="section-text">
-                <h2>Overview of Crime Distribution</h2>
-                <p>The choropleth map highlights the concentration of crime across various states in Malaysia, revealing
-                    patterns and potential areas for focused resource allocation, especially in states like Selangor and
-                    Kuala Lumpur.</p>
+                <h2>Overview of Crime Distribution Across Malaysia</h2>
+                <p>In 2017, Malaysia recorded a total of 99,168 crimes, which included various
+                    categories such as property crimes, violent crimes, and drug-related offenses.
+                    Kuala Lumpur and Selangor were undoubtedly the most dangerous areas, reaching
+                    a peak of 13,482 cases reported in 2017 alone. Among these crimes, theft emerged
+                    as the most prevalent, accounting for nearly 32% of all reported offenses.</p>
             </div>
             <div class="chart" id="choro_map"></div>
         </div>
@@ -158,10 +179,11 @@
                 <p>This section covers other notable crime statistics, providing a more comprehensive understanding of
                     the broader societal implications of crime data.</p>
             </div>
-            <div class="chart" id="pie_chart"></div>
-            <div class="chart" id="bar_2"></div>
+            <div class="charts-container">
+                <div class="chart" id="pie_chart"></div>
+                <div class="chart" id="bar_2"></div>
+            </div>
         </div>
-    </div>
 
     <script>
         vegaEmbed('#choro_map', './Visualisations/choro_2.vg.json');

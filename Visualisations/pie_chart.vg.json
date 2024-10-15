@@ -5,6 +5,13 @@
   },
   "width":"container",
   "height": "container",
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
+  },
   "encoding": {
     "theta": {"field": "Total", "type": "quantitative", "stack": true},
     "color": {
