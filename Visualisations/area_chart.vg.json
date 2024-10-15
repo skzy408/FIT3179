@@ -18,12 +18,13 @@
                     },
                     "axis": {
                         "format": "%Y",
-                        "title": ""
+                        "title": "Year"
                     }
                 },
                 "y": {
                     "aggregate": "sum",
-                    "field": "Value"
+                    "field": "Value",
+                    "title": "Cases"
                 },
                 "color": {
                     "field": "Type of crime",
@@ -69,13 +70,15 @@
                 "x": {
                     "timeUnit": "year",
                     "field": "Year",
+                    "title": "Year",
                     "axis": {
                         "format": "%Y"
                     }
                 },
                 "y": {
                     "aggregate": "sum",
-                    "field": "Value"
+                    "field": "Value",
+                    "title": "Cases"
                 },
                 "color": {
                     "field": "Type of crime",

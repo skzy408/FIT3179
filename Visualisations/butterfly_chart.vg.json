@@ -43,6 +43,7 @@
       ],
       "title": "Female",
       "mark": "bar",
+      "width": 450,
       "encoding": {
         "y": {
           "field": "State",
@@ -62,8 +63,8 @@
           "field": "Gender",
           "scale": {
             "range": [
-              "#ff9e9e",
-              "#db4646"
+              "#e7969c",
+              "#6b6ecf"
             ]
           },
           "legend": null
@@ -115,6 +116,7 @@
         }
       ],
       "title": "Male",
+      "width": 450,
       "mark": "bar",
       "encoding": {
         "y": {
